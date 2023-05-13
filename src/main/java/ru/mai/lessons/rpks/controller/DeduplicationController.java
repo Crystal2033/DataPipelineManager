@@ -17,14 +17,14 @@ public class DeduplicationController {
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД")
     public Iterable<Deduplication> getAllDeduplications() {
         //TODO code here...
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @GetMapping("/findAll/{id}")
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД по deduplication id")
     public Iterable<Deduplication> getAllDeduplicationsByDeduplicationId(@PathVariable long id) {
         //TODO code here...
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @GetMapping("/find/{deduplicationId}/{ruleId}")

@@ -7,6 +7,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group 'ru.mai.lessons.rpks'
 version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -28,7 +29,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation:3.0.5'
 
     //spring jpa
-    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.5'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.5'
 
     // logging
     implementation 'ch.qos.logback:logback-classic:1.4.5'
@@ -39,6 +40,8 @@ dependencies {
 
     // databases
     implementation 'org.postgresql:postgresql:42.5.4'
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+    implementation 'org.jooq:jooq:3.17.8'
 
     // json
     implementation 'com.fasterxml.jackson.core:jackson-core:2.14.2'
@@ -47,10 +50,12 @@ dependencies {
     testImplementation 'org.testcontainers:testcontainers:1.17.6'
     testImplementation "org.testcontainers:junit-jupiter:1.17.6"
     testImplementation "org.testcontainers:postgresql:1.17.6"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
     testCompileOnly "org.projectlombok:lombok:1.18.26"
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
 }
 
 test {

@@ -14,14 +14,14 @@ public class EnrichmentController {
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД")
     public Iterable<Enrichment> getAllEnrichments() {
         //TODO code here...
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @GetMapping("/findAll/{id}")
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД по enrichment id")
     public Iterable<Enrichment> getAllEnrichmentsByEnrichmentId(@PathVariable long id) {
         //TODO code here...
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @GetMapping("/find/{enrichmentId}/{ruleId}")

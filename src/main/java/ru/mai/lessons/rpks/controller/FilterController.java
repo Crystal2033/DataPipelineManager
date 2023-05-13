@@ -14,14 +14,14 @@ public class FilterController {
     @Operation(summary = "Получить информацию о всех фильтрах в БД")
     public Iterable<Filter> getAllFilters() {
         //TODO code here...
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @GetMapping("/findAll/{id}")
     @Operation(summary = "Получить информацию о всех фильтрах в БД по filter id")
     public Iterable<Filter> getAllFiltersByFilterId(@PathVariable long id) {
         //TODO code here...
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @GetMapping("/find/{filterId}/{ruleId}")

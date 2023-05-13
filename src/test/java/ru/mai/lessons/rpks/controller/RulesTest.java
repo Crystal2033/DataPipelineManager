@@ -43,7 +43,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Slf4j
 @Testcontainers
 @ContextConfiguration(initializers = {RulesTest.Initializer.class})
-public class RulesTest {
+class RulesTest {
     @Container
     static final PostgreSQLContainer<?> postgreSQL = new PostgreSQLContainer<>(DockerImageName.parse("postgres"))
             .withDatabaseName("test_db")
