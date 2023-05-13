@@ -1,9 +1,11 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Deduplication;
-import ru.mai.lessons.rpks.model.Filter;
 
 import java.util.Collections;
 
@@ -38,15 +40,17 @@ public class DeduplicationController {
         //TODO code here...
     }
 
+    @Transactional
     @DeleteMapping("/delete/{deduplicationId}/{ruleId}")
     @Operation(summary = "Удалить информацию по конкретному правилу дедубликации с deduplication id и rule id")
     public void deleteDeduplicationById(@PathVariable long deduplicationId, @PathVariable long ruleId) {
         //TODO code here...
     }
 
-    @PostMapping("/saveDeduplication")
+    @PostMapping("/save")
+    @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Создать правило дедубликации")
-    public void save(@RequestBody Deduplication deduplication) {
+    public void save(@RequestBody @Valid Deduplication deduplication) {
         //TODO code here...
     }
 
