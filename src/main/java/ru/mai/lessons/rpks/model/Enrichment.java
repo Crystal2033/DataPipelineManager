@@ -3,8 +3,7 @@ package ru.mai.lessons.rpks.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -13,7 +12,7 @@ public class Enrichment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long enricherId;
+    private long enrichmentId;
     private long ruleId;
     private String fieldName;
     private String fieldNameEnrichment;

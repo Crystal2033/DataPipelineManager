@@ -3,8 +3,7 @@ package ru.mai.lessons.rpks.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
