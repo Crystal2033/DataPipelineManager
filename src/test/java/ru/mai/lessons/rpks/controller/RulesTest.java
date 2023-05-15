@@ -299,7 +299,7 @@ class RulesTest {
             log.info("Create enrichment rule");
             DSLContext context = DSL.using(dataSource.getConnection(), SQLDialect.POSTGRES);
             context.insertInto(table(tableName)).columns(
-                            field("enrichment_id"),
+                            field("enricher_id"),
                             field("rule_id"),
                             field("field_name"),
                             field("field_name_enrichment"),
@@ -310,7 +310,7 @@ class RulesTest {
 
             log.info("Check rule from DB");
             var result = context.select(
-                            field("enrichment_id"),
+                            field("enricher_id"),
                             field("rule_id"),
                             field("field_name"),
                             field("field_name_enrichment"),
@@ -318,11 +318,11 @@ class RulesTest {
                             field("field_value_default")
                     )
                     .from(table(tableName))
-                    .where(field("enrichment_id").eq(enrichmentId).and(field("rule_id").eq(ruleId)))
+                    .where(field("enricher_id").eq(enrichmentId).and(field("rule_id").eq(ruleId)))
                     .fetch();
 
             String expectedValue =
-                    String.format("enrichment_id,rule_id,field_name,field_name_enrichment,field_value,field_value_default\n%d,%d,%s,%s,%s,%s\n",
+                    String.format("enricher_id,rule_id,field_name,field_name_enrichment,field_value,field_value_default\n%d,%d,%s,%s,%s,%s\n",
                             enrichmentId, ruleId, fieldName, fieldNameEnrichment, fieldValue, fieldValueDefault);
 
             assertEquals(expectedValue, result.formatCSV());

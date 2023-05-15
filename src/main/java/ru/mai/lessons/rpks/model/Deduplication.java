@@ -1,13 +1,14 @@
 package ru.mai.lessons.rpks.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "deduplication_rules")
 public class Deduplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
