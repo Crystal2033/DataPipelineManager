@@ -32,8 +32,8 @@ public class EnrichmentServiceImpl implements EnrichmentService {
         enrichmentRepository.deleteAll();
     }
 
-    @Transactional
     @Override
+    @Transactional
     public void deleteByEnrichmentIdAndRuleId(long enrichmentId, long ruleId) {
         enrichmentRepository.deleteEnrichmentByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }

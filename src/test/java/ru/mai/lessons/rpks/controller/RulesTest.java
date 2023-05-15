@@ -204,6 +204,7 @@ class RulesTest {
             log.info("Get enrichment rules");
             DSLContext context = DSL.using(dataSource.getConnection(), SQLDialect.POSTGRES);
             result = context.select(
+                            field("id"),
                             field("enrichment_id"),
                             field("rule_id"),
                             field("field_name"),
@@ -236,6 +237,7 @@ class RulesTest {
             log.info("Get filtering rules");
             DSLContext context = DSL.using(dataSource.getConnection(), SQLDialect.POSTGRES);
             result = context.select(
+                            field("id"),
                             field("filter_id"),
                             field("rule_id"),
                             field("field_name"),
