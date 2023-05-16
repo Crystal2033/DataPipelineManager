@@ -13,4 +13,7 @@ public interface DeduplicationRepository extends CrudRepository<Deduplication, L
     Deduplication getDeduplicationByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
 
     void deleteDeduplicationByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
+
+    @Override
+    long count();
 }

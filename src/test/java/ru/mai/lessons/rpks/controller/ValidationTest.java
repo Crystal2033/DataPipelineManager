@@ -85,7 +85,7 @@ class ValidationTest extends RulesTest {
                         new Filter(0, 1, 0, "fieldName3", "not_equals", "value3"),
                         new Filter(0, 1, 1, "", "not_equals", "value4"),
                         new Filter(0, 1, 1, "fieldName5", "", "value5"),
-                        new Filter(0, 1, 1, "fieldName6", "test", "value6"))
+                        new Filter(0, 1, 1, "fieldName6", "test", ""))
                 .toList();
 
         expectedRules.forEach(r -> {

@@ -11,4 +11,7 @@ public interface FilterRepository extends CrudRepository<Filter, Long> {
     Filter getFilterByFilterIdAndRuleId(long filterId, long ruleId);
 
     void deleteByFilterIdAndRuleId(long filterId, long ruleId);
+
+    @Override
+    long count();
 }

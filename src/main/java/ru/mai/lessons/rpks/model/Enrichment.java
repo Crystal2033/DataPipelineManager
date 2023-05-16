@@ -1,6 +1,8 @@
 package ru.mai.lessons.rpks.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Data
@@ -12,10 +14,22 @@ public class Enrichment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Min(1)
     private long enrichmentId;
+
+    @Min(1)
     private long ruleId;
+
+    @NotBlank
     private String fieldName;
+
+    @NotBlank
     private String fieldNameEnrichment;
+
+    @NotBlank
     private String fieldValue;
+
+    @NotBlank
     private String fieldValueDefault;
 }
