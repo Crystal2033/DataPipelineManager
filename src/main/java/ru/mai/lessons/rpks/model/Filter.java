@@ -3,7 +3,9 @@ package ru.mai.lessons.rpks.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
+
 
 @Data
 @NoArgsConstructor
@@ -24,7 +26,7 @@ public class Filter {
     @NotBlank
     private String fieldName;
 
-    @NotBlank
+    @Pattern(regexp = "^(contains|equals|not_contains|not_equals)$")
     private String filterFunctionName;
 
     @NotBlank
