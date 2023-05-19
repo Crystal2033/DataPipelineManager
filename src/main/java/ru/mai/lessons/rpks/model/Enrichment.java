@@ -14,7 +14,7 @@ public class Enrichment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long enricherId;
+    private long enrichmentId;
     private long ruleId;
     private String fieldName;
     private String fieldNameEnrichment;
