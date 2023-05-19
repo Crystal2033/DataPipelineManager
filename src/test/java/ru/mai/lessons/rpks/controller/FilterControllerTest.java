@@ -30,7 +30,7 @@ class FilterControllerTest extends RulesTest {
     }
 
     @Test
-    void getAllDeduplications() throws Exception {
+    void getAllFilters() throws Exception {
         var expectedRules = Stream.of(
                         new Filter(1, 1, 1, "fieldName1", "equals", "value1"),
                         new Filter(2, 1, 2, "fieldName2", "contains", "value2"),
@@ -45,7 +45,7 @@ class FilterControllerTest extends RulesTest {
     }
 
     @Test
-    void getAllDeduplicationsByDeduplicationId() throws Exception {
+    void getAllFiltersByFilterId() throws Exception {
         var expectedRules = Stream.of(
                         new Filter(1, 1, 1, "fieldName1", "equals", "value1"),
                         new Filter(2, 1, 2, "fieldName2", "contains", "value2"),
@@ -60,7 +60,7 @@ class FilterControllerTest extends RulesTest {
     }
 
     @Test
-    void getDeduplicationById() throws Exception {
+    void getFilterById() throws Exception {
         var expectedRule = Stream.of(
                         new Filter(1, 1, 1, "fieldName1", "equals", "value1"),
                         new Filter(2, 1, 2, "fieldName2", "contains", "value2"),
@@ -76,7 +76,7 @@ class FilterControllerTest extends RulesTest {
     }
 
     @Test
-    void deleteDeduplication() throws Exception {
+    void deleteFilter() throws Exception {
         var rules = Stream.of(
                         new Filter(1, 1, 1, "fieldName1", "equals", "value1"),
                         new Filter(2, 1, 2, "fieldName2", "contains", "value2"),
@@ -92,7 +92,7 @@ class FilterControllerTest extends RulesTest {
     }
 
     @Test
-    void deleteDeduplicationById() throws Exception {
+    void deleteFilterById() throws Exception {
         var actualRule = Stream.of(
                         new Filter(1, 1, 1, "fieldName1", "equals", "value1"),
                         new Filter(2, 1, 2, "fieldName2", "contains", "value2"),

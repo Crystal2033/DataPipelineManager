@@ -45,7 +45,7 @@ class EnrichmentControllerTest extends RulesTest {
     }
 
     @Test
-    void getAllEnrichmentsByDeduplicationId() throws Exception {
+    void getAllEnrichmentsByEnrichmentId() throws Exception {
         var expectedRules = Stream.of(
                         new Enrichment(1, 1, 1, "field1", "fieldEnrichment1", "value1", "valueDefault1"),
                         new Enrichment(2, 1, 2, "field2", "fieldEnrichment2", "value2", "valueDefault2"),
