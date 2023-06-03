@@ -9,7 +9,7 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI usersMicroserviceOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Сервис менеджер")
+                .info(new Info().title("Сервис менеджер") //
                         .description("Менеджер компонентов фильтрации, дедубликации, обогащения")
                         .version("1.0"));
     }
