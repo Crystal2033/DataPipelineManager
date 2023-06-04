@@ -22,15 +22,15 @@ public class Enrichment {
     @Min(value = 1)
     private long ruleId;
     @NotBlank(message = "fieldName is required")
-//    @NotNull
+    @NotNull
     private String fieldName;
     @NotBlank(message = "fieldNameEnrichment is required")
-//    @NotNull
+    @NotNull
     private String fieldNameEnrichment;
     @NotBlank(message = "fieldValue is required")
-//    @NotNull
+    @NotNull
     private String fieldValue;
     @NotBlank(message = "fieldValueDefault is required")
-//    @NotNull
+    @NotNull
     private String fieldValueDefault;
 }

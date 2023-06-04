@@ -22,13 +22,13 @@ public class Filter {
     private long filterId;
     @Min(value = 1)
     private long ruleId;
-//    @NotNull
+    @NotNull
     @NotBlank(message = "fieldName is required")
     private String fieldName;
-//    @NotNull
+    @NotNull
     @NotBlank(message = "filterFunctionName is required")
     private String filterFunctionName;
-//    @NotNull
+    @NotNull
     @NotBlank(message = "filterValue is required")
     private String filterValue;
 }
