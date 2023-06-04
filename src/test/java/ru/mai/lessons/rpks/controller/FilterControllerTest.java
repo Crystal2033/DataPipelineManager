@@ -86,7 +86,7 @@ class FilterControllerTest extends RulesTest {
 
         this.mockMvc.perform(delete("/filter/delete"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isAccepted());
 
         rules.forEach(r -> Assertions.assertTrue(getFilterRulesFromDB(r.getFilterId(), r.getRuleId()).isEmpty()));
     }
@@ -103,7 +103,7 @@ class FilterControllerTest extends RulesTest {
 
         this.mockMvc.perform(delete("/filter/delete/1/2"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isAccepted());
 
         Assertions.assertTrue(getFilterRulesFromDB(actualRule.getFilterId(), actualRule.getRuleId()).isEmpty());
     }

@@ -86,7 +86,7 @@ class EnrichmentControllerTest extends RulesTest {
 
         this.mockMvc.perform(delete("/enrichment/delete"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isAccepted());
 
         rules.forEach(r -> Assertions.assertTrue(getEnrichmentRulesFromDB(r.getEnrichmentId(), r.getRuleId()).isEmpty()));
     }
@@ -103,7 +103,7 @@ class EnrichmentControllerTest extends RulesTest {
 
         this.mockMvc.perform(delete("/enrichment/delete/1/2"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isAccepted());
 
         Assertions.assertTrue(getEnrichmentRulesFromDB(actualRule.getEnrichmentId(), actualRule.getRuleId()).isEmpty());
     }

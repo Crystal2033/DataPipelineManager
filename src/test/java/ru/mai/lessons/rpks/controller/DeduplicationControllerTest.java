@@ -86,7 +86,7 @@ class DeduplicationControllerTest extends RulesTest {
 
         this.mockMvc.perform(delete("/deduplication/delete"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isAccepted());
 
         rules.forEach(r -> Assertions.assertTrue(getDeduplicationRulesFromDB(r.getDeduplicationId(), r.getRuleId()).isEmpty()));
     }
@@ -103,7 +103,7 @@ class DeduplicationControllerTest extends RulesTest {
 
         this.mockMvc.perform(delete("/deduplication/delete/1/2"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isAccepted());
 
         Assertions.assertTrue(getDeduplicationRulesFromDB(actualRule.getDeduplicationId(), actualRule.getRuleId()).isEmpty());
     }
