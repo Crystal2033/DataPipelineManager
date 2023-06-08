@@ -1,14 +1,21 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.database.entities.Enrichment;
+import ru.mai.lessons.rpks.service.EnrichmentService;
 
 import java.util.Collections;
 
 @RestController
 @RequestMapping("enrichment")
 public class EnrichmentController {
+
+    private final EnrichmentService enrichmentService;
+    public EnrichmentController(EnrichmentService enrichmentService){
+        this.enrichmentService = enrichmentService;
+    }
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД")
@@ -46,7 +53,7 @@ public class EnrichmentController {
     @PostMapping("/save")
     @Operation(summary = "Создать правило обогащения")
     public void save(@RequestBody Enrichment enrichment) {
-        //TODO code here...
+        enrichmentService.save(enrichment);
     }
 
 }
