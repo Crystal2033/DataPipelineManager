@@ -2,7 +2,7 @@ package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
-import ru.mai.lessons.rpks.model.Filter;
+import ru.mai.lessons.rpks.database.entities.Filter;
 
 import java.util.Collections;
 

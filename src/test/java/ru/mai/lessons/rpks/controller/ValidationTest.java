@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-import ru.mai.lessons.rpks.model.Deduplication;
-import ru.mai.lessons.rpks.model.Enrichment;
-import ru.mai.lessons.rpks.model.Filter;
+import ru.mai.lessons.rpks.database.entities.Deduplication;
+import ru.mai.lessons.rpks.database.entities.Enrichment;
+import ru.mai.lessons.rpks.database.entities.Filter;
 
 import java.util.stream.Stream;
 

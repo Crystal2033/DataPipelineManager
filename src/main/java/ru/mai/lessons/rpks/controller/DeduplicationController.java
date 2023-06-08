@@ -5,13 +5,14 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.mai.lessons.rpks.model.Deduplication;
+import ru.mai.lessons.rpks.database.entities.Deduplication;
 
 import java.util.Collections;
 
 @RestController
 @RequestMapping("deduplication")
 public class DeduplicationController {
+
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД")

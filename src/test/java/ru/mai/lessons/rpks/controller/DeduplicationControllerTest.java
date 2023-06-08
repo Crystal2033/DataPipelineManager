@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-import ru.mai.lessons.rpks.model.Deduplication;
+import ru.mai.lessons.rpks.database.entities.Deduplication;
 
 import java.util.stream.Stream;
 

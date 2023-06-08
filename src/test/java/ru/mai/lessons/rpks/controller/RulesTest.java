@@ -27,9 +27,9 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.shaded.com.fasterxml.jackson.core.JsonProcessingException;
 import org.testcontainers.shaded.com.fasterxml.jackson.databind.ObjectMapper;
 import org.testcontainers.utility.DockerImageName;
-import ru.mai.lessons.rpks.model.Deduplication;
-import ru.mai.lessons.rpks.model.Enrichment;
-import ru.mai.lessons.rpks.model.Filter;
+import ru.mai.lessons.rpks.database.entities.Deduplication;
+import ru.mai.lessons.rpks.database.entities.Enrichment;
+import ru.mai.lessons.rpks.database.entities.Filter;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
