@@ -1,10 +1,11 @@
 package ru.mai.lessons.rpks.service;
 
-import io.swagger.v3.oas.annotations.servers.Server;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.database.entities.Enrichment;
 import ru.mai.lessons.rpks.database.repository.EnrichmentRepository;
+
+import java.util.List;
 
 @Service
 public class EnrichmentService {
@@ -14,7 +15,11 @@ public class EnrichmentService {
         this.enrichmentRepository = enrichmentRepository;
     }
 
-    public void save(@NotNull Enrichment enrichmentRule){
+    public void save(@NotNull Enrichment enrichmentRule) {
         enrichmentRepository.save(enrichmentRule);
+    }
+
+    public List<Enrichment> findAll() {
+        return enrichmentRepository.findAll();
     }
 }

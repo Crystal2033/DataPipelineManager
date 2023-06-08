@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface EnrichmentRepository extends CrudRepository<Enrichment, Long> {
     List<Enrichment> findAll();
+
     Enrichment save(Enrichment enrichmentRule);
 
 }

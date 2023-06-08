@@ -16,42 +16,42 @@ public class DeduplicationController {
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД")
-    public Iterable<Deduplication> getAllDeduplications() {
+    public Iterable<Deduplication> getAllRules() {
         //TODO code here...
         return Collections.emptyList();
     }
 
     @GetMapping("/findAll/{id}")
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД по deduplication id")
-    public Iterable<Deduplication> getAllDeduplicationsByDeduplicationId(@PathVariable long id) {
+    public Iterable<Deduplication> getAllRulesByDeduplicationId(@PathVariable long id) {
         //TODO code here...
         return Collections.emptyList();
     }
 
     @GetMapping("/find/{deduplicationId}/{ruleId}")
     @Operation(summary = "Получить информацию о правиле дедубликации по deduplication id и rule id")
-    public Deduplication getDeduplicationById(@PathVariable long deduplicationId, @PathVariable long ruleId) {
+    public Deduplication getRuleById(@PathVariable long deduplicationId, @PathVariable long ruleId) {
         //TODO code here...
         return new Deduplication();
     }
 
     @DeleteMapping("/delete")
     @Operation(summary = "Удалить информацию о всех правилах дедубликации")
-    public void deleteDeduplication() {
+    public void deleteAllRules() {
         //TODO code here...
     }
 
     @Transactional
     @DeleteMapping("/delete/{deduplicationId}/{ruleId}")
     @Operation(summary = "Удалить информацию по конкретному правилу дедубликации с deduplication id и rule id")
-    public void deleteDeduplicationById(@PathVariable long deduplicationId, @PathVariable long ruleId) {
+    public void deleteRuleById(@PathVariable long deduplicationId, @PathVariable long ruleId) {
         //TODO code here...
     }
 
     @PostMapping("/save")
     @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Создать правило дедубликации")
-    public void save(@RequestBody @Valid Deduplication deduplication) {
+    public void saveRule(@RequestBody @Valid Deduplication deduplication) {
         //TODO code here...
     }
 
