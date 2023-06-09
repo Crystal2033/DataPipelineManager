@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity(name = "filter_rules")
 public class Filter {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
