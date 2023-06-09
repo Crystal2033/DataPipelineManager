@@ -22,4 +22,21 @@ public class EnrichmentService {
     public List<Enrichment> findAll() {
         return enrichmentRepository.findAll();
     }
+
+    public List<Enrichment> findAllById(Long id) {
+        return enrichmentRepository.findAllById(id);
+    }
+
+    public Enrichment findByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId){
+        return enrichmentRepository.findByEnrichmentIdAndRuleId(enrichmentId, ruleId);
+    }
+
+    public void deleteAll(){
+        enrichmentRepository.deleteAll();
+    }
+
+    public void deleteByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId){
+        enrichmentRepository.deleteByEnrichmentIdAndRuleId(enrichmentId, ruleId);
+    }
+
 }

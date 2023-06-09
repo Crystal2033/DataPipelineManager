@@ -10,6 +10,14 @@ import java.util.List;
 public interface EnrichmentRepository extends CrudRepository<Enrichment, Long> {
     List<Enrichment> findAll();
 
+    List<Enrichment> findAllById(Long id);
+
+    Enrichment findByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId);
+
+    void deleteAll();
+
+    void deleteByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId);
+
     Enrichment save(Enrichment enrichmentRule);
 
 }
