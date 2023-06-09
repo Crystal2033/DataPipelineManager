@@ -24,13 +24,13 @@ public class EnrichmentController {
     @GetMapping("/findAll/{id}")
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД по enrichment id")
     public Iterable<Enrichment> getAllRulesByEnrichmentId(@PathVariable long id) {
-        return enrichmentService.findAllById(id);
+        return enrichmentService.findAllByEnrichmentId(id);
     }
 
     @GetMapping("/find/{enrichmentId}/{ruleId}")
     @Operation(summary = "Получить информацию о правиле обогащения по enrichment id и rule id")
     public Enrichment getRuleByEnrichmentAndRuleId(@PathVariable long enrichmentId, @PathVariable long ruleId) {
-        return enrichmentService.findByEnrichmentIdAndRuleId(enrichmentId, ruleId);
+        return enrichmentService.findByEnrichmentAndRuleId(enrichmentId, ruleId);
     }
 
     @DeleteMapping("/delete")
@@ -42,7 +42,7 @@ public class EnrichmentController {
     @DeleteMapping("/delete/{enrichmentId}/{ruleId}")
     @Operation(summary = "Удалить информацию по конкретному правилу обогащения с enrichment id и rule id")
     public void deleteRuleByEnrichmentAndRuleId(@PathVariable long enrichmentId, @PathVariable long ruleId) {
-        enrichmentService.deleteByEnrichmentIdAndRuleId(enrichmentId, ruleId);
+        enrichmentService.deleteByEnrichmentAndRuleId(enrichmentId, ruleId);
     }
 
     @PostMapping("/save")

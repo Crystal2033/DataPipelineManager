@@ -23,11 +23,11 @@ public class EnrichmentService {
         return enrichmentRepository.findAll();
     }
 
-    public List<Enrichment> findAllById(Long id) {
-        return enrichmentRepository.findAllById(id);
+    public List<Enrichment> findAllByEnrichmentId(Long id) {
+        return enrichmentRepository.findAllByEnrichmentId(id);
     }
 
-    public Enrichment findByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId){
+    public Enrichment findByEnrichmentAndRuleId(Long enrichmentId, Long ruleId){
         return enrichmentRepository.findByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
@@ -35,7 +35,7 @@ public class EnrichmentService {
         enrichmentRepository.deleteAll();
     }
 
-    public void deleteByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId){
+    public void deleteByEnrichmentAndRuleId(Long enrichmentId, Long ruleId){
         enrichmentRepository.deleteByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
