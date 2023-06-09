@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.database.entities.Filter;
@@ -50,7 +51,7 @@ public class FilterController {
 
     @PostMapping("/save")
     @Operation(summary = "Создать фильтр")
-    public void saveRule(@RequestBody Filter filter) {
+    public void saveRule(@RequestBody @Valid Filter filter) {
         filteringService.save(filter);
     }
 

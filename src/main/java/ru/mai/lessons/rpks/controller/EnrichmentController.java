@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.database.entities.Enrichment;
@@ -50,7 +51,7 @@ public class EnrichmentController {
 
     @PostMapping("/save")
     @Operation(summary = "Создать правило обогащения")
-    public void saveRule(@RequestBody Enrichment enrichment) {
+    public void saveRule(@RequestBody @Valid Enrichment enrichment) {
         enrichmentService.save(enrichment);
     }
 
