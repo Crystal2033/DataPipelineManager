@@ -27,15 +27,15 @@ public class FilteringService {
         return filteringRepository.findAllByFilterId(id);
     }
 
-    public Filter findByFilterAndRuleId(Long filterId, Long ruleId){
+    public Filter findByFilterAndRuleId(Long filterId, Long ruleId) {
         return filteringRepository.findByFilterIdAndRuleId(filterId, ruleId);
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         filteringRepository.deleteAll();
     }
 
-    public void deleteByFilterAndRuleId(Long filterId, Long ruleId){
+    public void deleteByFilterAndRuleId(Long filterId, Long ruleId) {
         filteringRepository.deleteByFilterIdAndRuleId(filterId, ruleId);
     }
 

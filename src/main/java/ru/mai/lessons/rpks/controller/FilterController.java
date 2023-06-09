@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.database.entities.Filter;
 import ru.mai.lessons.rpks.service.FilteringService;
@@ -35,12 +36,14 @@ public class FilterController {
 
     @DeleteMapping("/delete")
     @Operation(summary = "Удалить информацию о всех фильтрах")
+    @Transactional
     public void deleteAllRules() {
         filteringService.deleteAll();
     }
 
     @DeleteMapping("/delete/{filterId}/{ruleId}")
     @Operation(summary = "Удалить информацию по конкретному фильтру filter id и rule id")
+    @Transactional
     public void deleteRuleById(@PathVariable long filterId, @PathVariable long ruleId) {
         filteringService.deleteByFilterAndRuleId(filterId, ruleId);
     }

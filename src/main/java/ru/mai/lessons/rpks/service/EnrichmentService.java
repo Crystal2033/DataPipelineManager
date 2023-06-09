@@ -27,15 +27,15 @@ public class EnrichmentService {
         return enrichmentRepository.findAllByEnrichmentId(id);
     }
 
-    public Enrichment findByEnrichmentAndRuleId(Long enrichmentId, Long ruleId){
+    public Enrichment findByEnrichmentAndRuleId(Long enrichmentId, Long ruleId) {
         return enrichmentRepository.findByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         enrichmentRepository.deleteAll();
     }
 
-    public void deleteByEnrichmentAndRuleId(Long enrichmentId, Long ruleId){
+    public void deleteByEnrichmentAndRuleId(Long enrichmentId, Long ruleId) {
         enrichmentRepository.deleteByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
