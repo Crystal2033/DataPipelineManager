@@ -2,20 +2,19 @@ package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.database.entities.Filter;
 import ru.mai.lessons.rpks.service.FilteringService;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("filter")
 public class FilterController {
 
     private final FilteringService filteringService;
-
-    public FilterController(FilteringService filteringService) {
-        this.filteringService = filteringService;
-    }
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех фильтрах в БД")
@@ -50,6 +49,7 @@ public class FilterController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Создать фильтр")
     public void saveRule(@RequestBody @Valid Filter filter) {
         filteringService.save(filter);

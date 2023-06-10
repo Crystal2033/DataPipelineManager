@@ -12,6 +12,8 @@ public interface FilteringRepository extends CrudRepository<Filter, Long> {
 
     List<Filter> findAll();
 
+    long count();
+
     List<Filter> findAllByFilterId(Long filterId);
 
     Filter findByFilterIdAndRuleId(Long filterId, Long ruleId);

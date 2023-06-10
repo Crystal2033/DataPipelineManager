@@ -10,6 +10,8 @@ import java.util.List;
 public interface DeduplicationRepository extends CrudRepository<Deduplication, Long> {
     Deduplication save(Deduplication deduplicationRule);
 
+    long count();
+
     List<Deduplication> findAll();
     List<Deduplication> findAllByDeduplicationId(Long deduplicationId);
 

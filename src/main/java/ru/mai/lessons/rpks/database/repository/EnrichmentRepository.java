@@ -10,6 +10,7 @@ import java.util.List;
 public interface EnrichmentRepository extends CrudRepository<Enrichment, Long> {
     List<Enrichment> findAll();
 
+    long count();
     List<Enrichment> findAllByEnrichmentId(Long id);
 
     Enrichment findByEnrichmentIdAndRuleId(Long enrichmentId, Long ruleId);

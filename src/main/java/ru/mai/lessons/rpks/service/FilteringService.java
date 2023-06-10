@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.service;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.database.entities.Filter;
 import ru.mai.lessons.rpks.database.repository.FilteringRepository;
@@ -8,12 +9,10 @@ import ru.mai.lessons.rpks.database.repository.FilteringRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class FilteringService {
     private final FilteringRepository filteringRepository;
 
-    public FilteringService(FilteringRepository filteringRepository) {
-        this.filteringRepository = filteringRepository;
-    }
 
     public void save(@NotNull Filter filterRule) {
         filteringRepository.save(filterRule);

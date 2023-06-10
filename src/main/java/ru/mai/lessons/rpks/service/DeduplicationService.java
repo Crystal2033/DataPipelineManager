@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.service;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.database.entities.Deduplication;
 import ru.mai.lessons.rpks.database.repository.DeduplicationRepository;
@@ -8,12 +9,10 @@ import ru.mai.lessons.rpks.database.repository.DeduplicationRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class DeduplicationService {
     private final DeduplicationRepository deduplicationRepository;
 
-    public DeduplicationService(DeduplicationRepository deduplicationRepository) {
-        this.deduplicationRepository = deduplicationRepository;
-    }
 
     public void save(@NotNull Deduplication deduplicationRule) {
         deduplicationRepository.save(deduplicationRule);

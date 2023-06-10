@@ -29,8 +29,9 @@ public class Deduplication {
     private long ruleId;
     @NotBlank
     private String fieldName;
-    @NotBlank
+
+    @NotNull
     private long timeToLiveSec;
-    @NotBlank
+    @NotNull
     private boolean isActive;
 }
