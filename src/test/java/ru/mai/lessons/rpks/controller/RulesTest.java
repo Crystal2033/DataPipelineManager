@@ -55,12 +55,12 @@ class RulesTest {
             .withDatabaseName("test_db")
             .withUsername("user")
             .withPassword("password")
-            .withInitScript("init_script.sql");
-//            .withReuse(true)
-//            .withExposedPorts(containerPort)
-//            .withCreateContainerCmdModifier(cmd -> cmd.withHostConfig(
-//                    new HostConfig().withPortBindings(new PortBinding(Ports.Binding.bindPort(localPort), new ExposedPort(containerPort)))
-//            ));
+            .withInitScript("init_script.sql")
+            .withReuse(true)
+            .withExposedPorts(containerPort)
+            .withCreateContainerCmdModifier(cmd -> cmd.withHostConfig(
+                    new HostConfig().withPortBindings(new PortBinding(Ports.Binding.bindPort(localPort), new ExposedPort(containerPort)))
+            ));
 
     static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
         public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
