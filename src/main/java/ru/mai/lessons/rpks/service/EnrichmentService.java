@@ -16,11 +16,11 @@ public class EnrichmentService {
     }
 
     public Iterable<Enrichment> getAllById(long id) {
-        return enrichmentRepository.getAllById(id);
+        return enrichmentRepository.getAllByEnrichmentId(id);
     }
 
     public Enrichment getByIdAndRuleId(long id, long ruleId) {
-        return enrichmentRepository.getEntityByIdAndRuleId(id, ruleId);
+        return enrichmentRepository.getEnrichmentByEnrichmentIdAndRuleId(id, ruleId);
     }
 
     public void deleteAll() {
@@ -29,7 +29,7 @@ public class EnrichmentService {
 
     @Transactional
     public void deleteByIdAndRuleId(long id, long ruleId) {
-        enrichmentRepository.deleteByIdAndRuleId(id, ruleId);
+        enrichmentRepository.deleteEnrichmentByEnrichmentIdAndRuleId(id, ruleId);
     }
 
     public void save(Enrichment enrichment) {

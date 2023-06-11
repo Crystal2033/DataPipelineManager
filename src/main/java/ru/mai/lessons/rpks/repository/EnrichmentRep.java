@@ -6,9 +6,11 @@ import ru.mai.lessons.rpks.model.Enrichment;
 import java.util.List;
 
 public interface EnrichmentRep extends CrudRepository<Enrichment, Long> {
-    List<Enrichment> getAllById(long id);
-    Enrichment getEntityByIdAndRuleId(long id, long ruleId);
-    void deleteByIdAndRuleId(long id, long ruleId);
+    List<Enrichment> getAllByEnrichmentId(long id);
+
+    Enrichment getEnrichmentByEnrichmentIdAndRuleId(long id, long ruleId);
+
+    void deleteEnrichmentByEnrichmentIdAndRuleId(long id, long ruleId);
 
     @Override
     long count();

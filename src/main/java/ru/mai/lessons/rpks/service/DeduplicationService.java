@@ -16,11 +16,11 @@ public class DeduplicationService {
     }
 
     public Iterable<Deduplication> getAllById(long id) {
-        return deduplicationRepository.getAllById(id);
+        return deduplicationRepository.getAllByDeduplicationId(id);
     }
 
     public Deduplication getByIdAndRuleId(long id, long ruleId) {
-        return deduplicationRepository.getEntityByIdAndRuleId(id, ruleId);
+        return deduplicationRepository.getDeduplicationByDeduplicationIdAndRuleId(id, ruleId);
     }
 
     public void deleteAll() {
@@ -29,7 +29,7 @@ public class DeduplicationService {
 
     @Transactional
     public void deleteByIdAndRuleId(long id, long ruleId) {
-        deduplicationRepository.deleteByIdAndRuleId(id, ruleId);
+        deduplicationRepository.deleteDeduplicationByDeduplicationIdAndRuleId(id, ruleId);
     }
 
     public void save(Deduplication deduplication) {
