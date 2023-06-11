@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 public class Enrichment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     @Min(1)
     private long enrichmentId;
 
