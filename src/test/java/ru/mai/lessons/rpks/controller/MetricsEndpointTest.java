@@ -47,18 +47,18 @@ class MetricsEndpointTest {
     protected MockMvc mockMvc;
     @Test
     void checkMetricsEndpoint() throws Exception {
-        this.mockMvc.perform(get("/actuator/health"))
+        this.mockMvc.perform(get("/actuator/metrics"))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
 
     @Test
     void checkInfoEndpoint() throws Exception {
-        this.mockMvc.perform(get("/actuator"))
+        this.mockMvc.perform(get("/actuator/info"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("self")))
-                .andExpect(content().string(containsString("health")))
-                .andExpect(content().string(containsString("health-path")));
+                .andExpect(content().string(containsString("countFilters")))
+                .andExpect(content().string(containsString("countDeduplications")))
+                .andExpect(content().string(containsString("countEnrichments")));
     }
 }

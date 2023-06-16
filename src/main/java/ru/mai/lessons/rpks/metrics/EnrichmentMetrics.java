@@ -14,6 +14,6 @@ public class EnrichmentMetrics implements InfoContributor{
     @Override
     public void contribute(Info.Builder builder) {
         var countEnrichments = enrichmentRepository.count();
-        builder.withDetail("Enrichments", countEnrichments);
+        builder.withDetail("countEnrichments", countEnrichments);
     }
 }
