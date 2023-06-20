@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '3.0.6'
     id 'java'
+    id "com.diffplug.eclipse.apt" version "3.26.0"
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -14,6 +15,10 @@ repositories {
 }
 
 dependencies {
+    implementation "org.mapstruct:mapstruct:1.5.5.Final"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final"
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     //spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -57,7 +62,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
 }
-
 test {
     useJUnitPlatform()
 }

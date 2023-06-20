@@ -1,6 +1,8 @@
 package ru.mai.lessons.rpks.model;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,12 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Deduplication {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Positive
     private long deduplicationId;
-    private long ruleId;
-    private String fieldName;
+    @Positive
+    long ruleId;
+    @NotBlank
+    String fieldName;
+    @PositiveOrZero
     private long timeToLiveSec;
     private boolean isActive;
 }

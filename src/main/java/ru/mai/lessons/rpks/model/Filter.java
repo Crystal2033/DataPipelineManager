@@ -1,22 +1,27 @@
 package ru.mai.lessons.rpks.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Filter {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long filterId;
-    private long ruleId;
-    private String fieldName;
-    private String filterFunctionName;
-    private String filterValue;
+    @Positive
+    long filterId;
+    @Positive
+    long ruleId;
+    @NotBlank(message = "filterFunctionName may not be blank ")
+    String fieldName;
+    @NotBlank
+    @Pattern(regexp = "\\w{2,8}a\\w{1,2}s")
+    String filterFunctionName;
+    @NotBlank
+    String filterValue;
 }

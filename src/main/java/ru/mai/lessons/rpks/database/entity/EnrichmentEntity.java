@@ -1,29 +1,23 @@
-package ru.mai.lessons.rpks.model;
+package ru.mai.lessons.rpks.database.entity;
 
-
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Enrichment {
+@NoArgsConstructor
+@Table(name = "enrichment_rules")
+public class EnrichmentEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Positive
     private long enrichmentId;
-    @Positive
     private long ruleId;
-    @NotBlank
     private String fieldName;
-    @NotBlank
     private String fieldNameEnrichment;
-    @NotBlank
     private String fieldValue;
-    @NotBlank
     private String fieldValueDefault;
 }
