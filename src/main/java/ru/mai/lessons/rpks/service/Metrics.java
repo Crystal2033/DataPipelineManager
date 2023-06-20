@@ -10,6 +10,8 @@ public class Metrics {
 
     private final MeterRegistry meterRegistry;
     private Counter deduplicationCounter;
+    private Counter enrichmentCounter;
+    private Counter filterCounter;
 
     public Metrics(MeterRegistry meterRegistry) {
         this.meterRegistry = meterRegistry;
@@ -17,10 +19,19 @@ public class Metrics {
 
     @PostConstruct
     void init() {
-        this.deduplicationCounter = meterRegistry.counter("countDeduplications");
+        this.deduplicationCounter = meterRegistry.counter("countDeduplication");
+        this.enrichmentCounter = meterRegistry.counter("countEnrichment");
+        this.filterCounter = meterRegistry.counter("countFilter");
+
     }
 
+    public void incrementEnrichment() {
+        enrichmentCounter.increment();
+    }
     public void incrementDeduplication() {
         deduplicationCounter.increment();
+    }
+    public void incrementFilter() {
+        filterCounter.increment();
     }
 }

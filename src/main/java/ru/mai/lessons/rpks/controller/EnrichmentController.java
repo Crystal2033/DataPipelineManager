@@ -43,13 +43,14 @@ public class EnrichmentController {
     @DeleteMapping("/delete/{enrichmentId}/{ruleId}")
     @Operation(summary = "Удалить информацию по конкретному правилу обогащения с enrichment id и rule id")
     public void deleteEnrichmentById(@PathVariable long enrichmentId, @PathVariable long ruleId) {
-        //TODO code here...
+        enrichmentService.deleteByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
     @PostMapping("/save")
     @Operation(summary = "Создать правило обогащения")
     public void save(@RequestBody Enrichment enrichment) {
-        //TODO code here...
+        enrichmentService.save(enrichment);
+        metrics.incrementEnrichment();
     }
 
 }

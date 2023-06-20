@@ -1,10 +1,8 @@
 package ru.mai.lessons.rpks.service;
 
-import io.swagger.v3.oas.annotations.servers.Server;
-import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.model.Enrichment;
 
-@Service
+
 public interface EnrichmentService {
 
     Iterable<Enrichment> getAll();
