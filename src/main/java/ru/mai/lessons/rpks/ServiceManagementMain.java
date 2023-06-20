@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServiceManagmentMain {
+public class ServiceManagementMain {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceManagmentMain.class, args);
+        SpringApplication.run(ServiceManagementMain.class, args);
     }
 }
 
