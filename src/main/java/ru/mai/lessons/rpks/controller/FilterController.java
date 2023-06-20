@@ -3,6 +3,7 @@ package ru.mai.lessons.rpks.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Filter;
+import ru.mai.lessons.rpks.service.FilterServer;
 
 import java.util.Collections;
 
@@ -10,10 +11,11 @@ import java.util.Collections;
 @RequestMapping("filter")
 public class FilterController {
 
+    FilterServer serverFilter;
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех фильтрах в БД")
     public Iterable<Filter> getAllFilters() {
-        //TODO code here...
+        //TODO code here.
         return Collections.emptyList();
     }
 

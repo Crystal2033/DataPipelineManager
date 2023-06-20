@@ -8,12 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "deduplication_rules")
 public class Deduplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long deduplicationId;
-    private long ruleId;
+    private Long id;
+    private Long deduplicationId;
+    private Long ruleId;
     private String fieldName;
     private long timeToLiveSec;
     private boolean isActive;
