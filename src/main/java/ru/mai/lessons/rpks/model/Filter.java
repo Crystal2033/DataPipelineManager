@@ -1,15 +1,16 @@
 package ru.mai.lessons.rpks.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.mai.lessons.rpks.repository.FilterRepository;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "filter_rules")
 public class Filter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
