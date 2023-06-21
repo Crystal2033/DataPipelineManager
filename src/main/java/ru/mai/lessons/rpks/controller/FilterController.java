@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Filter;
 import ru.mai.lessons.rpks.repository.FilterRepository;
-
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -20,7 +18,6 @@ public class FilterController {
     private FilterRepository filterRepository;
 
     @GetMapping("/findAll")
-
     @Operation(summary = "Получить информацию о всех фильтрах в БД")
     @ResponseStatus(value = HttpStatus.OK)
     public Iterable<Filter> getAllFilters() {

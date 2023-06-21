@@ -9,11 +9,10 @@ import ru.mai.lessons.rpks.repository.FilterRepository;
 @Component
 @RequiredArgsConstructor
 public class FilterMetrics implements InfoContributor {
-
     private final FilterRepository filterRepository;
+    private  static final String COUNT_FILTERS="countFilters";
     @Override
     public void contribute(Info.Builder builder) {
-        var countFilters = filterRepository.count();
-        builder.withDetail("countFilters", countFilters);
+        builder.withDetail(COUNT_FILTERS, filterRepository.count());
     }
 }

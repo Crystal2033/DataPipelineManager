@@ -7,11 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Deduplication;
-import ru.mai.lessons.rpks.model.Filter;
 import ru.mai.lessons.rpks.repository.DeduplicationRepository;
-import ru.mai.lessons.rpks.repository.FilterRepository;
-
-import java.util.Collections;
 import java.util.List;
 
 @RestController

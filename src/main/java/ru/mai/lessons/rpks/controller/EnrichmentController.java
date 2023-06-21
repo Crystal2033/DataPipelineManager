@@ -8,9 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Enrichment;
 import ru.mai.lessons.rpks.repository.EnrichmentRepository;
-import ru.mai.lessons.rpks.repository.FilterRepository;
-
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -30,7 +27,6 @@ public class EnrichmentController {
     @ResponseStatus(value = HttpStatus.OK)
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД по enrichment id")
     public Iterable<Enrichment> getAllEnrichmentsByEnrichmentId(@PathVariable long id) {
-        //TODO code here...
         return enrichmentRepository.findByEnrichmentId(id);
     }
 
@@ -54,7 +50,6 @@ public class EnrichmentController {
     @ResponseStatus(value = HttpStatus.OK)
     @Operation(summary = "Удалить информацию по конкретному правилу обогащения с enrichment id и rule id")
     public void deleteEnrichmentById(@PathVariable long enrichmentId, @PathVariable long ruleId) {
-        //TODO code here...
          enrichmentRepository.deleteAllByEnrichmentIdAndAndRuleId(enrichmentId,ruleId);
     }
 
