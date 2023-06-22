@@ -28,7 +28,8 @@ public class Filter {
     @NotNull
     @Pattern(regexp = "^(contains|equals|not_contains|not_equals)$")
     private String filterFunctionName;
-    @NotBlank
     @NotNull
+    @NotBlank
     private String filterValue;
 }
+

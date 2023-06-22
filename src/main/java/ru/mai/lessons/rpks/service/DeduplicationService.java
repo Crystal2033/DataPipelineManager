@@ -5,7 +5,6 @@ import ru.mai.lessons.rpks.model.Deduplication;
 import java.util.List;
 
 public interface DeduplicationService {
-
     List<Deduplication> getAllDeduplications();
 
     List<Deduplication> getAllDeduplicationsByDeduplicationId(long deduplicationId);
@@ -18,3 +17,4 @@ public interface DeduplicationService {
 
     void save(Deduplication deduplication);
 }
+

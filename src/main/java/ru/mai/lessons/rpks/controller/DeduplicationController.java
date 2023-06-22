@@ -7,15 +7,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Deduplication;
-import ru.mai.lessons.rpks.service.impl.DeduplicationServiceImpl;
+import ru.mai.lessons.rpks.service.DeduplicationService;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("deduplication")
 public class DeduplicationController {
-    private final DeduplicationServiceImpl deduplicationService;
-
-
+    private final DeduplicationService deduplicationService;
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД")
     public Iterable<Deduplication> getAllDeduplications() {
@@ -55,3 +53,4 @@ public class DeduplicationController {
     }
 
 }
+
