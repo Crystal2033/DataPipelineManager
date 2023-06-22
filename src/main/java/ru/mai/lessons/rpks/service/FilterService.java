@@ -13,7 +13,7 @@ public interface FilterService {
 
     void deleteFilter();
 
-    void deleteFilterById(long filterId, long ruleId);
+    void deleteFilterById( long filterId, long ruleId);
 
     void save(Filter filter);
 }

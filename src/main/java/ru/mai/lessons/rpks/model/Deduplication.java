@@ -25,5 +25,6 @@ public class Deduplication {
     private String fieldName;
     @Min(value = 0)
     private long timeToLiveSec;
+
     private boolean isActive;
 }
