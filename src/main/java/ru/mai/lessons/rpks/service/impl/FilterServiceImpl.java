@@ -34,7 +34,7 @@ public class FilterServiceImpl implements FilterService {
 
     @Override
     public void deleteFilterById(long filterId, long ruleId) {
-        filterRepository.deleteFilterByFilterIdAndRuleId(filterId, ruleId);
+        filterRepository.deleteAllByFilterIdAndRuleId(filterId, ruleId);
     }
 
     @Override

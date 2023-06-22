@@ -11,7 +11,7 @@ public interface FilterRepository extends JpaRepository<Filter, Long> {
 
     Filter getFilterByFilterIdAndRuleId(long filterId, long ruleId);
 
-    void deleteFilterByFilterIdAndRuleId(long filterId, long ruleId);
+    void deleteAllByFilterIdAndRuleId(long filterId, long ruleId);
 
 
 }

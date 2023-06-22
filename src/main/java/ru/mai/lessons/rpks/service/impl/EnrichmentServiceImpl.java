@@ -35,7 +35,7 @@ public class EnrichmentServiceImpl implements EnrichmentService {
 
     @Override
     public void deleteEnrichmentById(long enrichmentId, long ruleId) {
-        enrichmentRepository.deleteEnrichmentByEnrichmentIdAndRuleId(enrichmentId, ruleId);
+        enrichmentRepository.deleteAllByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
     @Override
