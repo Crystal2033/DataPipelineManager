@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Enrichment;
 import ru.mai.lessons.rpks.service.EnrichmentService;
 
-import java.util.Collections;
 
 @RestController
 @RequiredArgsConstructor
