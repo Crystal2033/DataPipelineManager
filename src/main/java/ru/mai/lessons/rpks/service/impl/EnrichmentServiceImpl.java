@@ -1,5 +1,6 @@
 package ru.mai.lessons.rpks.service.impl;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.model.Enrichment;
@@ -34,6 +35,7 @@ public class EnrichmentServiceImpl implements EnrichmentService {
     }
 
     @Override
+    @Transactional
     public void deleteEnrichmentById(long enrichmentId, long ruleId) {
         enrichmentRepository.deleteAllByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }

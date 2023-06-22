@@ -1,5 +1,6 @@
 package ru.mai.lessons.rpks.service.impl;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.model.Deduplication;
@@ -34,6 +35,7 @@ public class DeduplicationServiceImpl implements DeduplicationService {
     }
 
     @Override
+    @Transactional
     public void deleteDeduplicationById(long deduplicationId, long ruleId) {
         deduplicationRepository.deleteDeduplicationsByDeduplicationIdAndRuleId(deduplicationId, ruleId);
     }

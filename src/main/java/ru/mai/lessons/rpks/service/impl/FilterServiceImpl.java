@@ -1,5 +1,6 @@
 package ru.mai.lessons.rpks.service.impl;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.model.Filter;
@@ -33,6 +34,7 @@ public class FilterServiceImpl implements FilterService {
     }
 
     @Override
+    @Transactional
     public void deleteFilterById(long filterId, long ruleId) {
         filterRepository.deleteAllByFilterIdAndRuleId(filterId, ruleId);
     }
