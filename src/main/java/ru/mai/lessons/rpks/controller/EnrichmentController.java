@@ -3,6 +3,7 @@ package ru.mai.lessons.rpks.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Enrichment;
 import ru.mai.lessons.rpks.service.EnrichmentService;
@@ -44,6 +45,7 @@ public class EnrichmentController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Создать правило обогащения")
     public void save(@RequestBody @Valid Enrichment enrichment) {
         enrichmentService.save(enrichment);
