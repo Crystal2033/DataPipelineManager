@@ -1,9 +1,13 @@
 package ru.mai.lessons.rpks.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.Min;
+
 
 @Data
 @NoArgsConstructor
@@ -13,9 +17,9 @@ import lombok.NoArgsConstructor;
 public class Filter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long filterId;
-    private Long ruleId;
+    private long id;
+    private long filterId;
+    private long ruleId;
     private String fieldName;
     private String filterFunctionName;
     private String filterValue;

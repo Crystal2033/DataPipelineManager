@@ -19,9 +19,9 @@ public class Metrics {
 
     @PostConstruct
     void init() {
-        this.deduplicationCounter = meterRegistry.counter("countDeduplication");
-        this.enrichmentCounter = meterRegistry.counter("countEnrichment");
-        this.filterCounter = meterRegistry.counter("countFilter");
+        this.deduplicationCounter = meterRegistry.counter("countDeduplications");
+        this.enrichmentCounter = meterRegistry.counter("countEnrichments");
+        this.filterCounter = meterRegistry.counter("countFilters");
 
     }
 

@@ -12,13 +12,17 @@ import java.util.Optional;
 
 @Repository
 public interface DeduplicationRepository extends CrudRepository<Deduplication, Long> {
-    /*@Query("select * from Deduplication d where deduplicationId = :deduplicationId and ruleId = :ruleId")
-    Optional<Deduplication> findByDeduplicationIdAndRuleId(@Param("deduplicationId") long deduplicationId,
-                                                           @Param("ruleId") long ruleId);*/
+    //@Query("select * from Deduplication d where deduplicationId = :deduplicationId and ruleId = :ruleId")
+    Optional<Deduplication> findByDeduplicationIdAndRuleId(@Param("deduplicationId")  long deduplicationId,
+                                                           @Param("ruleId") long ruleId);
 
-    Optional<Deduplication> findByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
+    // Optional<Deduplication> findByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
 
-    void deleteByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
+  //  void deleteByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
+  //@Query("select * from Deduplication d where deduplicationId = :deduplicationId and ruleId = :ruleId")
+  void deleteByDeduplicationIdAndRuleId(@Param("deduplicationId") long deduplicationId,
+                                        @Param("ruleId") long ruleId);
 
-    List<Deduplication> findByDeduplicationId(long deduplicationId);
+    //@Query("select * from Deduplication d where deduplicationId = :deduplicationId")
+    List<Deduplication> findByDeduplicationId(@Param("deduplicationId") long deduplicationId);
 }

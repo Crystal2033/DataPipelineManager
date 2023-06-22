@@ -15,21 +15,25 @@ import ru.mai.lessons.rpks.service.Metrics;
 @RequiredArgsConstructor
 public class DeduplicationController {
 
-    private DeduplicationService deduplicationService;
-    private Metrics metrics;
-    @GetMapping
+    private final DeduplicationService deduplicationService;
+    private final Metrics metrics;
+
+    @GetMapping("/findAll")
+    @ResponseStatus(value = HttpStatus.OK)
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД")
     public Iterable<Deduplication> getAllDeduplications() {
         return deduplicationService.getAll();
     }
 
     @GetMapping("/findAll/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД по deduplication id")
     public Iterable<Deduplication> getAllDeduplicationsByDeduplicationId(@PathVariable long id) {
         return deduplicationService.getByDeduplicationId(id);
     }
 
     @GetMapping("/find/{deduplicationId}/{ruleId}")
+    @ResponseStatus(value = HttpStatus.OK)
     @Operation(summary = "Получить информацию о правиле дедубликации по deduplication id и rule id")
     public Deduplication getDeduplicationById(@PathVariable long deduplicationId, @PathVariable long ruleId) {
         return deduplicationService.getByDeduplicationIdAndRuleId(deduplicationId, ruleId);

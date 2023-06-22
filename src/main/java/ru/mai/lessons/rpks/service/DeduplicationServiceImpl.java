@@ -1,7 +1,9 @@
 package ru.mai.lessons.rpks.service;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import ru.mai.lessons.rpks.model.Deduplication;
 import ru.mai.lessons.rpks.repository.DeduplicationRepository;
 
@@ -17,6 +19,16 @@ public class DeduplicationServiceImpl implements DeduplicationService {
     }
 
     @Override
+    public void save(@RequestBody @Valid Deduplication deduplication) {
+        deduplicationRepository.save(deduplication);
+    }
+
+    @Override
+    public Deduplication getByDeduplicationIdAndRuleId(long deduplicationId, long ruleId) {
+        return deduplicationRepository.findByDeduplicationIdAndRuleId(deduplicationId, ruleId).orElse(null);
+    }
+
+    @Override
     public void deleteAll() {
         deduplicationRepository.deleteAll();
     }
@@ -29,15 +41,5 @@ public class DeduplicationServiceImpl implements DeduplicationService {
     @Override
     public Iterable<Deduplication> getByDeduplicationId(long id) {
         return deduplicationRepository.findByDeduplicationId(id);
-    }
-
-    @Override
-    public void save(Deduplication deduplication) {
-        deduplicationRepository.save(deduplication);
-    }
-
-    @Override
-    public Deduplication getByDeduplicationIdAndRuleId(long deduplicationId, long ruleId) {
-        return deduplicationRepository.findByDeduplicationIdAndRuleId(deduplicationId, ruleId).orElse(null);
     }
 }

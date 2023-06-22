@@ -1,20 +1,22 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Enrichment;
-import ru.mai.lessons.rpks.service.DeduplicationService;
 import ru.mai.lessons.rpks.service.EnrichmentService;
 import ru.mai.lessons.rpks.service.Metrics;
-
-import java.util.Collections;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("enrichment")
+@RequiredArgsConstructor
 public class EnrichmentController {
 
-    private EnrichmentService enrichmentService;
-    private Metrics metrics;
+    private final EnrichmentService enrichmentService;
+    private final Metrics metrics;
+
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД")
     public Iterable<Enrichment> getAllEnrichments() {
@@ -47,6 +49,7 @@ public class EnrichmentController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Создать правило обогащения")
     public void save(@RequestBody Enrichment enrichment) {
         enrichmentService.save(enrichment);
