@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -13,7 +14,7 @@ import ru.mai.lessons.rpks.repository.DeduplicationRepository;
 
 @Service
 @RequiredArgsConstructor
-@ComponentScan
+@Component
 public class DeduplicationServiceImpl implements DeduplicationService {
 
     private final DeduplicationRepository deduplicationRepository;
@@ -24,7 +25,7 @@ public class DeduplicationServiceImpl implements DeduplicationService {
     }
 
     @Override
-    public void save(@RequestBody @Valid Deduplication deduplication) {
+    public void save( Deduplication deduplication) {
         deduplicationRepository.save(deduplication);
     }
 

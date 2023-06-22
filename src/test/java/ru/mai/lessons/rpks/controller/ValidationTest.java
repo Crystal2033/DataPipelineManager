@@ -56,6 +56,7 @@ class ValidationTest extends RulesTest {
     @Test
     void enrichmentSave() {
         var expectedRules = Stream.of(
+                new Enrichment(0, 1, 1, "field5", "", "value5", "valueDefault5"),
                         new Enrichment(0, 0, 0, "field1", "fieldEnrichment1", "value1", "valueDefault1"),
                         new Enrichment(0, 0, 1, "field2", "fieldEnrichment2", "value2", "valueDefault2"),
                         new Enrichment(0, 1, 0, "field3", "fieldEnrichment3", "value3", "valueDefault3"),

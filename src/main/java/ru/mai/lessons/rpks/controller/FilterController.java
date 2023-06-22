@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -52,8 +53,7 @@ public class FilterController {
     @PostMapping("/save")
     @Operation(summary = "Создать фильтр")
     @ResponseStatus(value = HttpStatus.CREATED)
-
-    public void save(@RequestBody Filter filter) {
+    public void save(@RequestBody @Valid Filter filter) {
         serverFilter.save(filter);
     }
 

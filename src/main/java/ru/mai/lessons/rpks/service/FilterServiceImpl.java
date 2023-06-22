@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +14,7 @@ import ru.mai.lessons.rpks.repository.FilterRepository;
 
 @Service
 @RequiredArgsConstructor
-@ComponentScan
+@Component
 public class FilterServiceImpl implements FilterService {
 
     private final FilterRepository filterRepository;
@@ -25,7 +26,7 @@ public class FilterServiceImpl implements FilterService {
 
 
     @Override
-    public void save(@RequestBody Filter filter) {
+    public void save(Filter filter) {
         filterRepository.save(filter);
     }
 

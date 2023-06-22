@@ -25,7 +25,6 @@ public class Deduplication {
     @NotBlank
     @NotNull
     private String fieldName;
-    @NotNull
     @Min(value = 1)
     private long timeToLiveSec;
     @NotNull
