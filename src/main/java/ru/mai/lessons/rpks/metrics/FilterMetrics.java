@@ -9,7 +9,7 @@ import ru.mai.lessons.rpks.repository.FilterRepository;
 @Component
 @RequiredArgsConstructor
 public class FilterMetrics implements InfoContributor{
-    FilterRepository filterRepository;
+    private final FilterRepository filterRepository;
     @Override
     public void contribute(Info.Builder builder) {
         builder.withDetail("countFilters", filterRepository.count());

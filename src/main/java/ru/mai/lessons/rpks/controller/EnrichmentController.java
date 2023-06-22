@@ -12,7 +12,7 @@ import ru.mai.lessons.rpks.service.EnrichmentService;
 @RequiredArgsConstructor
 @RequestMapping("enrichment")
 public class EnrichmentController {
-    EnrichmentService enrichmentService;
+    private final EnrichmentService enrichmentService;
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД")
     public Iterable<Enrichment> getAllEnrichments() {

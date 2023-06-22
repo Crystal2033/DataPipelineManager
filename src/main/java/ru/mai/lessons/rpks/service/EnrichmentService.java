@@ -1,5 +1,6 @@
 package ru.mai.lessons.rpks.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.model.Enrichment;
 import ru.mai.lessons.rpks.repository.EnrichmentRepository;
@@ -7,8 +8,10 @@ import ru.mai.lessons.rpks.repository.EnrichmentRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EnrichmentService {
-    EnrichmentRepository enrichmentRepository;
+    private final EnrichmentRepository enrichmentRepository;
+
 
     public List<Enrichment> getAllEnrichments() {
         return enrichmentRepository.findAll();

@@ -3,17 +3,18 @@ package ru.mai.lessons.rpks.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Deduplication;
 import ru.mai.lessons.rpks.service.DeduplicationService;
 
-import java.util.Collections;
-
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("deduplication")
 public class DeduplicationController {
-    DeduplicationService deduplicationService;
+    private final DeduplicationService deduplicationService;
+
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех правилах дедубликации в БД")

@@ -2,14 +2,16 @@ package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Filter;
 import ru.mai.lessons.rpks.service.FilterService;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("filter")
 public class FilterController {
-    public FilterService filterService;
+    private final FilterService filterService;
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех фильтрах в БД")

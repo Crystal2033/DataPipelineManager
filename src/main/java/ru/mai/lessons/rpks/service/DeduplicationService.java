@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class DeduplicationService {
-    DeduplicationRepository deduplicationRepository;
+    private final DeduplicationRepository deduplicationRepository;
 
     public List<Deduplication> getAllDeduplications() {
         return deduplicationRepository.findAll();

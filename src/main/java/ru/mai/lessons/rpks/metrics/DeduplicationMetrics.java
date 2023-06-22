@@ -9,7 +9,7 @@ import ru.mai.lessons.rpks.repository.DeduplicationRepository;
 @Component
 @RequiredArgsConstructor
 public class DeduplicationMetrics implements InfoContributor {
-    DeduplicationRepository deduplicationRepository;
+    private final DeduplicationRepository deduplicationRepository;
     @Override
     public void contribute(Info.Builder builder) {
         builder.withDetail("countDeduplications", deduplicationRepository.count());

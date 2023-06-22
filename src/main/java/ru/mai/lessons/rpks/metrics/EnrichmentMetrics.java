@@ -9,9 +9,9 @@ import ru.mai.lessons.rpks.repository.EnrichmentRepository;
 @Component
 @RequiredArgsConstructor
 public class EnrichmentMetrics implements InfoContributor {
-    EnrichmentRepository enrichmentRepository;
+    private final EnrichmentRepository enrichmentRepository;
     @Override
     public void contribute(Info.Builder builder) {
-        builder.withDetail("countEnricments", enrichmentRepository.count());
+        builder.withDetail("countEnrichments", enrichmentRepository.count());
     }
 }
