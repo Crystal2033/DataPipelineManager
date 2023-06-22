@@ -29,7 +29,7 @@ public class DeduplicationService {
     }
 
     public void deleteDeduplicationById(long deduplicationId, long ruleId) {
-        deduplicationRepository.deleteAllDeduplicationsByDeduplicationIdAndRuleId(deduplicationId, ruleId);
+        deduplicationRepository.deleteDeduplicationsByDeduplicationIdAndRuleId(deduplicationId, ruleId);
     }
 
     public void save(Deduplication deduplication) {

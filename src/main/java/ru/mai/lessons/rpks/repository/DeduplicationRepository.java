@@ -10,5 +10,5 @@ public interface DeduplicationRepository extends JpaRepository<Deduplication, Lo
 
     Deduplication getDeduplicationByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
 
-    void deleteAllDeduplicationsByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
+    void deleteDeduplicationsByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
 }

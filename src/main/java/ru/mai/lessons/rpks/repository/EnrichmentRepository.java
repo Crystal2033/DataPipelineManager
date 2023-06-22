@@ -10,5 +10,5 @@ public interface EnrichmentRepository extends JpaRepository<Enrichment, Long> {
 
     Enrichment getEnrichmentByEnrichmentIdAndRuleId(long enrichmentId, long ruleId);
 
-    void deleteAllEnrichmentsByEnrichmentIdAndRuleId(long enrichmentId, long ruleId);
+    void deleteEnrichmentsByEnrichmentIdAndRuleId(long enrichmentId, long ruleId);
 }
