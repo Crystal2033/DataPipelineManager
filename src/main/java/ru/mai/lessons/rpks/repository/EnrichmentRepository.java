@@ -12,13 +12,14 @@ import java.util.Optional;
 @Repository
 public interface EnrichmentRepository extends CrudRepository<Enrichment, Long> {
 
-    //@Query("select * from Enrichment d where enrichmentId = :enrichmentId and ruleId = :ruleId")
-    /*Optional<Enrichment> findByEnrichmentIdAndRuleId(@Param("enrichmentId") long enrichmentId,
-                                                     @Param("ruleId")  long ruleId);*/
+
 
     Optional<Enrichment> findByEnrichmentIdAndRuleId(long enrichmentId, long ruleId);
 
     void deleteByEnrichmentIdAndRuleId(long enrichmentId, long ruleId);
 
     List<Enrichment> findByEnrichmentId(long enrichmentId);
+    //@Query("select * from Enrichment d where enrichmentId = :enrichmentId and ruleId = :ruleId")
+    /*Optional<Enrichment> findByEnrichmentIdAndRuleId(@Param("enrichmentId") long enrichmentId,
+                                                     @Param("ruleId")  long ruleId);*/
 }

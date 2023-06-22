@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Deduplication;
 import ru.mai.lessons.rpks.service.DeduplicationService;
-import ru.mai.lessons.rpks.service.Metrics;
 
 @RestController
 @RequestMapping("deduplication")
@@ -16,7 +15,7 @@ import ru.mai.lessons.rpks.service.Metrics;
 public class DeduplicationController {
 
     private final DeduplicationService deduplicationService;
-    private final Metrics metrics;
+
 
     @GetMapping("/findAll")
     @ResponseStatus(value = HttpStatus.OK)
@@ -58,7 +57,8 @@ public class DeduplicationController {
     @Operation(summary = "Создать правило дедубликации")
     public void save(@RequestBody @Valid Deduplication deduplication) {
         deduplicationService.save(deduplication);
-        metrics.incrementDeduplication();
     }
+
+
 
 }

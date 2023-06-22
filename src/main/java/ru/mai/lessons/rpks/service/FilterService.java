@@ -5,7 +5,7 @@ import ru.mai.lessons.rpks.model.Filter;
 
 public interface FilterService {
     Iterable<Filter> getAll();
-    void save(Filter deduplication);
+    void save(Filter filter);
 
     Filter getByFilterIdAndRuleId(long filterId, long ruleId);
 

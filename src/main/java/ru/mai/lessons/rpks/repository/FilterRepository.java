@@ -10,16 +10,15 @@ import java.util.Optional;
 
 @Repository
 public interface FilterRepository extends CrudRepository<Filter, Long> {
-    //@Query("select * from Filter d where filterId = :filterId and ruleId = :ruleId")
-    /*Optional<Filter> findByFilterIdAndRuleId(@Param("filterId") long filterId,
-                                             @Param("ruleId") long ruleId);*/
 
     Optional<Filter> findByFilterIdAndRuleId(long filterId, long ruleId);
-    //Optional<Filter> findByFilterIdAndRuleId(long filterId, long ruleId);
 
     void deleteByFilterIdAndRuleId(long filterId, long ruleId);
 
     List<Filter> findByFilterId(long filterId);
+    //@Query("select * from Filter d where filterId = :filterId and ruleId = :ruleId")
+    /*Optional<Filter> findByFilterIdAndRuleId(@Param("filterId") long filterId,
+                                             @Param("ruleId") long ruleId);*/
 }
 
 

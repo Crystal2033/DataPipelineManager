@@ -1,9 +1,13 @@
 package ru.mai.lessons.rpks.service;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.mai.lessons.rpks.model.Filter;
 import ru.mai.lessons.rpks.repository.FilterRepository;
 
@@ -19,8 +23,9 @@ public class FilterServiceImpl implements FilterService {
         return filterRepository.findAll();
     }
 
+
     @Override
-    public void save(Filter filter) {
+    public void save(@RequestBody Filter filter) {
         filterRepository.save(filter);
     }
 

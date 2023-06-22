@@ -2,9 +2,13 @@ package ru.mai.lessons.rpks.service;
 
 
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.mai.lessons.rpks.model.Enrichment;
 import ru.mai.lessons.rpks.repository.EnrichmentRepository;
 
@@ -21,7 +25,7 @@ public class EnrichmentServiceImpl implements EnrichmentService {
     }
 
     @Override
-    public void save(Enrichment enrichment) {
+    public void save(@RequestBody @Valid Enrichment enrichment) {
         enrichmentRepository.save(enrichment);
     }
 
