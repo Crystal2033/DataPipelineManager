@@ -1,5 +1,9 @@
 package ru.mai.lessons.rpks.controller;
 
+import com.github.dockerjava.api.model.ExposedPort;
+import com.github.dockerjava.api.model.HostConfig;
+import com.github.dockerjava.api.model.PortBinding;
+import com.github.dockerjava.api.model.Ports;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Setter;
@@ -44,11 +48,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Testcontainers
 @ContextConfiguration(initializers = {RulesTest.Initializer.class})
 class RulesTest {
+    static int containerPort = 5432;
+    static int localPort = 5432;
     @Container
-    static final PostgreSQLContainer<?> postgreSQL = new PostgreSQLContainer<>(DockerImageName.parse("postgres"))
+    static PostgreSQLContainer<?> postgreSQL = new PostgreSQLContainer<>(DockerImageName.parse("postgres"))
             .withDatabaseName("test_db")
             .withUsername("user")
-            .withPassword("password");
+            .withPassword("password")
+            .withInitScript("init_script.sql")
+            .withReuse(true)
+            .withExposedPorts(containerPort)
+            .withCreateContainerCmdModifier(cmd -> cmd.withHostConfig(
+                    new HostConfig().withPortBindings(new PortBinding(Ports.Binding.bindPort(localPort), new ExposedPort(containerPort)))
+            ));
 
     static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
         public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
@@ -204,6 +216,7 @@ class RulesTest {
             log.info("Get enrichment rules");
             DSLContext context = DSL.using(dataSource.getConnection(), SQLDialect.POSTGRES);
             result = context.select(
+                            field("id"),
                             field("enrichment_id"),
                             field("rule_id"),
                             field("field_name"),
@@ -236,6 +249,7 @@ class RulesTest {
             log.info("Get filtering rules");
             DSLContext context = DSL.using(dataSource.getConnection(), SQLDialect.POSTGRES);
             result = context.select(
+                            field("id"),
                             field("filter_id"),
                             field("rule_id"),
                             field("field_name"),
