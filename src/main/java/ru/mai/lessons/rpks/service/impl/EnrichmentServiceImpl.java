@@ -23,7 +23,7 @@ public class EnrichmentServiceImpl implements EnrichmentService {
     }
 
     @Override
-    public List<Enrichment> getAllEnrichmentsByEnrichmentIdId(long enrichmentId) {
+    public List<Enrichment> getAllEnrichmentsByEnrichmentId(long enrichmentId) {
         log.debug("get enrichment by enrichmentId and ruleId");
         return enrichmentRepository.getAllByEnrichmentId(enrichmentId);
     }

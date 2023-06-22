@@ -23,9 +23,9 @@ public class DeduplicationServiceImpl implements DeduplicationService {
     }
 
     @Override
-    public List<Deduplication> getAllDeduplicationsByDeduplicationId(Long id) {
+    public List<Deduplication> getAllDeduplicationsByDeduplicationId(long deduplicationId) {
         log.debug("get all deduplications by id from db");
-        return deduplicationRepository.getDeduplicationsByDeduplicationId(id);
+        return deduplicationRepository.getDeduplicationsByDeduplicationId(deduplicationId);
     }
 
     @Override

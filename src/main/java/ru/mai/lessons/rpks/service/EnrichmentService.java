@@ -8,7 +8,7 @@ public interface EnrichmentService {
 
     List<Enrichment> getAllEnrichments();
 
-    List<Enrichment> getAllEnrichmentsByEnrichmentIdId(long enrichmentId);
+    List<Enrichment> getAllEnrichmentsByEnrichmentId(long enrichmentId);
 
     Enrichment getEnrichmentById(long enrichmentId, long ruleId);
 

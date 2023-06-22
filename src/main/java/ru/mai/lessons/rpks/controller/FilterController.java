@@ -29,7 +29,7 @@ public class FilterController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Получить информацию о фильтре по filter id и rule id")
     public Filter getFilterByFilterIdAndRuleId(@PathVariable long filterId, @PathVariable long ruleId) {
-        return filterService.getFilterById(filterId, ruleId);
+        return filterService.getFilterByFilterIdAndRuleId(filterId, ruleId);
     }
 
     @DeleteMapping("/delete")

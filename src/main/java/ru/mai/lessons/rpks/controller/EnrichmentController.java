@@ -21,7 +21,7 @@ public class EnrichmentController {
     @GetMapping("/findAll/{id}")
     @Operation(summary = "Получить информацию о всех правилах обогащения в БД по enrichment id")
     public Iterable<Enrichment> getAllEnrichmentsByEnrichmentId(@PathVariable long id) {
-        return enrichmentService.getAllEnrichmentsByEnrichmentIdId(id);
+        return enrichmentService.getAllEnrichmentsByEnrichmentId(id);
     }
 
     @GetMapping("/find/{enrichmentId}/{ruleId}")
