@@ -28,7 +28,7 @@ public class FilterService {
     }
 
     public void deleteByFilterIdAndRuleId(long filterId, long ruleId) {
-        filterRepository.deleteByFilterIdAndRuleId(filterId, ruleId);
+        filterRepository.deleteAllByFilterIdAndRuleId(filterId, ruleId);
     }
 
     public void save(Filter filter) {

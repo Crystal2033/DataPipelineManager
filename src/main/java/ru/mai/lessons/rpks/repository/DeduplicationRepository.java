@@ -8,7 +8,7 @@ import java.util.List;
 public interface DeduplicationRepository extends JpaRepository<Deduplication, Long> {
     List<Deduplication> getDeduplicationsByDeduplicationId(long deduplicationId);
 
-    Deduplication getDeduplicationByIdAndRuleId(long deduplicationId, long ruleId);
+    Deduplication getDeduplicationByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
 
-    void deleteDeduplicationsByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
+    void deleteAllDeduplicationsByDeduplicationIdAndRuleId(long deduplicationId, long ruleId);
 }

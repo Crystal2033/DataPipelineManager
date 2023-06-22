@@ -21,7 +21,7 @@ public class DeduplicationService {
     }
 
     public Deduplication getDeduplicationById(long deduplicationId, long ruleId) {
-        return deduplicationRepository.getDeduplicationByIdAndRuleId(deduplicationId, ruleId);
+        return deduplicationRepository.getDeduplicationByDeduplicationIdAndRuleId(deduplicationId, ruleId);
     }
 
     public void deleteDeduplication() {
@@ -29,7 +29,7 @@ public class DeduplicationService {
     }
 
     public void deleteDeduplicationById(long deduplicationId, long ruleId) {
-        deduplicationRepository.deleteDeduplicationsByDeduplicationIdAndRuleId(deduplicationId, ruleId);
+        deduplicationRepository.deleteAllDeduplicationsByDeduplicationIdAndRuleId(deduplicationId, ruleId);
     }
 
     public void save(Deduplication deduplication) {

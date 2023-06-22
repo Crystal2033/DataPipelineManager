@@ -30,7 +30,7 @@ public class EnrichmentService {
     }
 
     public void deleteEnrichmentById(long enrichmentId, long ruleId) {
-        enrichmentRepository.deleteEnrichmentsByEnrichmentIdAndRuleId(enrichmentId, ruleId);
+        enrichmentRepository.deleteAllEnrichmentsByEnrichmentIdAndRuleId(enrichmentId, ruleId);
     }
 
     public void save(Enrichment enrichment) {
