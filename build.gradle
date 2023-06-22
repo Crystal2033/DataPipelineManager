@@ -17,6 +17,8 @@ dependencies {
 
     //spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:3.1.0'
+    implementation 'de.codecentric:spring-boot-admin-starter-client:3.0.3'
 
     //spring boot thymeleaf template
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.0.5'
