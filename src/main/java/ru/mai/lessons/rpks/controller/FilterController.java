@@ -1,17 +1,18 @@
 package ru.mai.lessons.rpks.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.mai.lessons.rpks.model.Filter;
-import ru.mai.lessons.rpks.service.impl.FilterServiceImpl;
+import ru.mai.lessons.rpks.service.FilterService;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("filter")
 public class FilterController {
-    private final FilterServiceImpl filterService;
+    private final FilterService filterService;
 
     @GetMapping("/findAll")
     @Operation(summary = "Получить информацию о всех фильтрах в БД")
@@ -26,10 +27,9 @@ public class FilterController {
     }
 
     @GetMapping("/find/{filterId}/{ruleId}")
-    @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Получить информацию о фильтре по filter id и rule id")
     public Filter getFilterByFilterIdAndRuleId(@PathVariable long filterId, @PathVariable long ruleId) {
-        return filterService.getFilterById(filterId, ruleId);
+        return filterService.getFilterByFilterIdAndRuleId(filterId, ruleId);
     }
 
     @DeleteMapping("/delete")
@@ -45,9 +45,9 @@ public class FilterController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(value = HttpStatus.CREATED)
     @Operation(summary = "Создать фильтр")
-    public void save(@RequestBody Filter filter) {
+    public void save(@RequestBody @Valid Filter filter) {
         filterService.save(filter);
     }
-
 }

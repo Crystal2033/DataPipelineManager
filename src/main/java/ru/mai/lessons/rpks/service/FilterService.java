@@ -9,7 +9,7 @@ public interface FilterService {
 
     List<Filter> getAllFiltersByFilterId(long filterId);
 
-    Filter getFilterById(long filterId, long ruleId);
+    Filter getFilterByFilterIdAndRuleId(long filterId, long ruleId);
 
     void deleteFilter();
 

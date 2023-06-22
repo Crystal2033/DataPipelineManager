@@ -28,7 +28,7 @@ public class FilterServiceImpl implements FilterService {
     }
 
     @Override
-    public Filter getFilterById(long filterId, long ruleId) {
+    public Filter getFilterByFilterIdAndRuleId(long filterId, long ruleId) {
         log.debug("get filter by filterId and ruleId");
         return filterRepository.getFilterByFilterIdAndRuleId(filterId, ruleId);
     }
