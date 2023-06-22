@@ -17,10 +17,20 @@ import lombok.NoArgsConstructor;
 public class Deduplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(value = 1)
+    @NotNull
     private long id;
+    @Min(value = 1)
+    @NotNull
     private long deduplicationId;
+    @NotNull
+    @Min(value = 1)
     private long ruleId;
+    @NotBlank
     private String fieldName;
+    @NotNull
+    @Min(value = 1)
     private long timeToLiveSec;
+    @NotNull
     private boolean isActive;
 }

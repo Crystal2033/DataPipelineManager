@@ -3,12 +3,14 @@ package ru.mai.lessons.rpks.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import ru.mai.lessons.rpks.model.Enrichment;
 import ru.mai.lessons.rpks.repository.EnrichmentRepository;
 
 @Service
 @RequiredArgsConstructor
+@ComponentScan
 public class EnrichmentServiceImpl implements EnrichmentService {
 
     private final EnrichmentRepository enrichmentRepository;

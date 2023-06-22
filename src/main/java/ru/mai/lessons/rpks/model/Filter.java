@@ -17,10 +17,19 @@ import jakarta.validation.constraints.Min;
 public class Filter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(value = 1)
+    @NotNull
     private long id;
+    @Min(value = 1)
+    @NotNull
     private long filterId;
+    @Min(value = 1)
+    @NotNull
     private long ruleId;
+    @NotBlank
     private String fieldName;
+    @NotBlank
     private String filterFunctionName;
+    @NotBlank
     private String filterValue;
 }

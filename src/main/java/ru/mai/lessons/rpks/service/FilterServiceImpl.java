@@ -1,6 +1,7 @@
 package ru.mai.lessons.rpks.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.mai.lessons.rpks.model.Filter;
@@ -8,6 +9,7 @@ import ru.mai.lessons.rpks.repository.FilterRepository;
 
 @Service
 @RequiredArgsConstructor
+@ComponentScan
 public class FilterServiceImpl implements FilterService {
 
     private final FilterRepository filterRepository;

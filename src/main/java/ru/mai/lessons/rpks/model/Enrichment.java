@@ -16,11 +16,21 @@ import lombok.NoArgsConstructor;
 public class Enrichment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(value = 1)
+    @NotNull
     private long id;
+    @NotNull
+    @Min(value = 1)
     private long enrichmentId;
+    @Min(value = 1)
+    @NotNull
     private long ruleId;
+    @NotBlank
     private String fieldName;
+    @NotBlank
     private String fieldNameEnrichment;
+    @NotBlank
     private String fieldValue;
+    @NotBlank
     private String fieldValueDefault;
 }
